@@ -1,6 +1,6 @@
 <?php
-namespace App;
-include_once "AppoimentUtility.php";
+require_once "../layout/header.php";
+require_once "AppoimentUtility.php";
 
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
@@ -19,7 +19,14 @@ include_once "AppoimentUtility.php";
   <tbody>
 
     <?php
-        $appoiments = AppoimentUtility::getAppoiments();
+
+        try {
+          $appoiments = AppoimentUtility::getAppoiments();
+        }catch (Exception $e){
+          echo $e->getMessage();
+          $appoiments= [];
+        }
+        
         foreach ($appoiments as $appoiment){
             echo "<tr>";
             echo "<th scope=\"row\">" . $appoiment["id"] . "</th>";
@@ -34,4 +41,8 @@ include_once "AppoimentUtility.php";
     
   </tbody>
 </table>
+
+<?php
+  require "../layout/footer.php"
+?>
 
