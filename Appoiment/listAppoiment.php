@@ -3,8 +3,6 @@ require_once "../layout/header.php";
 require_once "AppoimentUtility.php";
 
 ?>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <table class="table">
   <thead class="thead-dark">
@@ -14,6 +12,8 @@ require_once "AppoimentUtility.php";
       <th scope="col">Tipo cita</th>
       <th scope="col">Fecha</th>
       <th scope="col">Hora</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -34,6 +34,8 @@ require_once "AppoimentUtility.php";
             echo "<td>" . $appoiment["tipo_cita_id"]. "</td>";
             echo "<td>" . $appoiment["fecha"]. "</td>";
             echo "<td>" . $appoiment["hora"]. "</td>";
+            echo "<td><a href=./delete.php?id=" .$appoiment["id"] . "><button class=\"btn btn-danger\">Delete</button></a></td>";
+            echo "<td><form action=\"edit.php\" method=\"POST\"><input type=hidden name=\"id\" value =". $appoiment["id"] ."><button type=\"submit\" class=\"btn btn-primary\">Editar</button></td></form>";
             echo "</tr>";
 
         }
