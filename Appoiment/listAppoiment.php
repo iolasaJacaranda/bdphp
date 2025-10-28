@@ -34,8 +34,8 @@ require_once "AppoimentUtility.php";
             echo "<td>" . $appoiment["tipo_cita_id"]. "</td>";
             echo "<td>" . $appoiment["fecha"]. "</td>";
             echo "<td>" . $appoiment["hora"]. "</td>";
-            echo "<td><a href=./delete.php?id=" .$appoiment["id"] . "><button class=\"btn btn-danger\">Delete</button></a></td>";
-            echo "<td><form action=\"edit.php\" method=\"POST\"><input type=hidden name=\"id\" value =". $appoiment["id"] ."><button type=\"submit\" class=\"btn btn-primary\">Editar</button></td></form>";
+            echo "<td><a href=./ManagerAppoiment.php?action=delete&id=" .$appoiment["id"] . "><button class=\"btn btn-danger\">Delete</button></a></td>";
+            echo "<td><form action=\"ManagerAppoiment.php?action=edit\" method=\"POST\"><input type=hidden name=\"id\" value =". $appoiment["id"] ."><button type=\"submit\" class=\"btn btn-primary\">Editar</button></td></form>";
             echo "</tr>";
 
         }

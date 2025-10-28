@@ -1,8 +1,5 @@
-<?php
+<form method="post" action="prueba.php?paramGet=inma&otroParam=otronombre&id=3">
 
-require_once "../Appoiment/AppoimentUtility.php";
-require_once "../email/Email.php";
-require "../email/sendEmail.php";
-
-$l = AppoimentUtility::getAppoiments();
-$p = Email::sendEmail();
+<input type="text" id="prueba" name="prueba">
+<button type="submit">Enviar</button>
+</form>

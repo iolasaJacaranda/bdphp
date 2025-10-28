@@ -15,4 +15,18 @@ class AppoimentTypeUtility{
             throw new Exception("Error al acceder a la base de datos");
         }
     }
+    public static function getNameType($id){
+        try{
+            $instance = Database::getInstance();
+
+            $query = "SELECT nombre from tipos_cita where id= :id";
+            $stmt = $instance->prepare($query);
+            $stmt->bindParam(":id",$id);
+            $stmt->execute();
+            $sol=  $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $sol[0]["nombre"];
+        }catch (Exception $exception){
+            throw new Exception("Error al acceder a la base de datos");
+        }
+    }
 }
